@@ -12,9 +12,9 @@ import { match, Result } from 'oxide.ts';
 import { IdResponse } from '@libs/api/id.response.dto';
 import { ApiErrorResponse } from '@src/libs/api/api-error.response';
 import { AggregateID } from '@src/libs/domain';
-import { UserAlreadyExistsError } from '../domain/user.errors';
 import { CreateUserRequestDto } from './create-user.request.dto';
 import { CreateUserCommand } from './create-user.command';
+import { UserAlreadyExistsError } from '../../domain/user.errors';
 
 @Controller(routesV1.version)
 export class CreateUserHttpController {
