@@ -7,10 +7,16 @@ import { CqrsModule } from '@nestjs/cqrs';
 import { CreateUserHttpController } from './commands/create-user/create-user.http.controller';
 import { CreateUserService } from './commands/create-user/create-user.service';
 import { USER_REPOSITORY } from './user.di-tokens';
+import { DeleteUserHttpController } from './commands/delete-user/delete-user.http-controller';
+import { DeleteUserService } from './commands/delete-user/delete-user.service';
 
-const httpControllers = [CreateUserHttpController, FindUsersHttpController];
+const httpControllers = [
+  CreateUserHttpController,
+  FindUsersHttpController,
+  DeleteUserHttpController,
+];
 
-const commandHandlers: Provider[] = [CreateUserService];
+const commandHandlers: Provider[] = [CreateUserService, DeleteUserService];
 
 const queryHandlers: Provider[] = [FindUsersQueryHandler];
 
