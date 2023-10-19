@@ -1,7 +1,7 @@
 services:
   db:
     image: postgres:latest
-    container_name: backend-template
+    container_name: meu-atelie
     restart: always
     environment:
       POSTGRES_USER: 'user'
